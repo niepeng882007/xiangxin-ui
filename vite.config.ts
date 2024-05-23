@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import typescript from '@rollup/plugin-typescript'
+import postcss from 'rollup-plugin-postcss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +15,9 @@ export default defineConfig({
             declarationDir: resolve('lib/types'),
             exclude: resolve('node_modules/**'),
             allowSyntheticDefaultImports: true,
+        }),
+        postcss({
+            extract: true, // 将CSS提取到单独的文件中
         }),
     ],
     css: {
@@ -31,6 +35,7 @@ export default defineConfig({
             name: 'xiangxinUI',
             fileName: 'xiangxin-ui',
         },
+        // css
         rollupOptions: {
             external: ['react', 'react-dom', 'antd'],
             input: 'src/index.ts',

@@ -34,6 +34,9 @@ export const Button = ({ primary = false, size = 'medium', backgroundColor, labe
             className={[styles.storybookButton, styles[size], styles[mode], 'colorRed'].join(' ')}
             style={{ backgroundColor }}
             {...props}
+            onClick={() => {
+                console.log('test')
+            }}
         >
             {label}
         </button>
