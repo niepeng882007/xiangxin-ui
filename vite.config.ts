@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import typescript from '@rollup/plugin-typescript'
-import postcss from 'rollup-plugin-postcss'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,16 +16,14 @@ export default defineConfig({
             exclude: resolve('node_modules/**'),
             allowSyntheticDefaultImports: true,
         }),
-        postcss({
-            extract: true, // 将CSS提取到单独的文件中
-        }),
+        cssInjectedByJsPlugin(),
     ],
     css: {
         modules: {
             scopeBehaviour: 'local',
             localsConvention: 'camelCaseOnly', // 类名使用驼峰格式
-            globalModulePaths: [/global\.css$/],
-            exportGlobals: true,
+            // globalModulePaths: [/global\.css$/],
+            // exportGlobals: true,
         },
     },
     build: {
