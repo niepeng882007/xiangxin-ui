@@ -28,13 +28,11 @@
     "lint-staged": {
         "src/**/*.{ts,tsx,json}": [
             "prettier --write",
-            "eslint",
-            "git add"
+            "eslint"
         ],
         ".storybook/**/*.{ts,tsx}": [
             "prettier --write",
-            "eslint",
-            "git add"
+            "eslint"
         ]
     },
     "peerDependencies": {
