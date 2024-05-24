@@ -6,24 +6,13 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        react(),
-        typescript({
-            target: 'es5',
-            rootDir: resolve('src/'),
-            declaration: true,
-            declarationDir: resolve('lib/types'),
-            exclude: resolve('node_modules/**'),
-            allowSyntheticDefaultImports: true,
-        }),
-        cssInjectedByJsPlugin(),
-    ],
+    plugins: [react(), cssInjectedByJsPlugin()],
     css: {
         modules: {
             scopeBehaviour: 'local',
             localsConvention: 'camelCaseOnly', // 类名使用驼峰格式
-            // globalModulePaths: [/global\.css$/],
-            // exportGlobals: true,
+            globalModulePaths: [/global\.css$/],
+            exportGlobals: true,
         },
     },
     build: {
@@ -33,7 +22,6 @@ export default defineConfig({
             name: 'xiangxinUI',
             fileName: 'xiangxin-ui',
         },
-        // css
         rollupOptions: {
             external: ['react', 'react-dom', 'antd'],
             input: 'src/index.ts',
@@ -44,6 +32,19 @@ export default defineConfig({
                     antd: 'antd',
                 },
             },
+            plugins: [
+                typescript({
+                    target: 'es5',
+                    rootDir: resolve('src/'),
+                    declaration: true,
+                    declarationDir: resolve('lib/types'),
+                    exclude: resolve('node_modules/**'),
+                    allowSyntheticDefaultImports: true,
+                }),
+            ],
         },
+    },
+    optimizeDeps: {
+        exclude: ['storybook'], // 将 Storybook 或相关有问题的依赖项添加到排除列表
     },
 })

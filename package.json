@@ -22,7 +22,20 @@
         "preview": "vite preview",
         "storybook": "storybook dev -p 9999",
         "build-storybook": "storybook build",
-        "prettier": "prettier --write ."
+        "prettier": "prettier --write .",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "src/**/*.{ts,tsx,json}": [
+            "prettier --write",
+            "eslint",
+            "git add"
+        ],
+        ".storybook/**/*.{ts,tsx}": [
+            "prettier --write",
+            "eslint",
+            "git add"
+        ]
     },
     "peerDependencies": {
         "antd": ">=5.0.0",
@@ -31,6 +44,8 @@
     },
     "devDependencies": {
         "@chromatic-com/storybook": "^1.4.0",
+        "@commitlint/cli": "^19.3.0",
+        "@commitlint/config-conventional": "^19.2.2",
         "@rollup/plugin-typescript": "^11.1.6",
         "@storybook/addon-designs": "^8.0.2",
         "@storybook/addon-essentials": "^8.1.1",
@@ -50,6 +65,8 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.6",
         "eslint-plugin-storybook": "^0.8.0",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.4",
         "prettier": "^2.8.8",
         "sass": "^1.77.2",
         "storybook": "^8.1.1",
