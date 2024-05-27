@@ -1,13 +1,13 @@
 {
     "name": "xiangxin-ui",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "type": "module",
+    "types": "./lib/index.d.ts",
     "files": [
         "lib"
     ],
     "main": "./lib/xiangxin-ui.umd.cjs",
     "module": "./lib/xiangxin-ui.js",
-    "typings": "./lib/index.d.ts",
     "style": "./lib/style.css",
     "exports": {
         ".": {
