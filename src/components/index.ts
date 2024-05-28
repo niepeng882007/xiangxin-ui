@@ -1,4 +1,2 @@
-import * as global from '../styles/global.css'
-export { global }
-
-export * from './Button'
+export { default as Button } from './button'
+export type { ButtonProps } from './button'
