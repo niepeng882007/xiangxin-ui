@@ -4,6 +4,8 @@ import { TextAreaProps } from 'antd/lib/input/TextArea'
 import styles from './textarea.module.css'
 import cx from 'classnames'
 
+import CommonTheme from '../theme/common-theme'
+
 export interface TextareaProps extends TextAreaProps {
     resize?: 'none' | 'both' | 'horizontal' | 'vertical'
     children?: ReactElement
@@ -30,47 +32,49 @@ const XTextarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function XTexta
     }, [initValue])
 
     return (
-        <div
-            className={cx(styles.aiTextArea, {
-                focus,
-                isError,
-            })}
-        >
-            <TextArea
-                value={value}
-                ref={ref}
-                style={{
-                    resize,
-                    height: 150,
-                    position: 'relative',
-                }}
-                onChange={handleTextareaChange}
-                onFocus={() => {
-                    setFocus(true)
-                }}
-                onBlur={() => {
-                    setFocus(false)
-                }}
-                {...rest}
-            />
-            <div className={styles.bottomWrap}>
-                {children}
-                <span
+        <CommonTheme>
+            <div
+                className={cx(styles.aiTextArea, {
+                    focus,
+                    isError,
+                })}
+            >
+                <TextArea
+                    value={value}
+                    ref={ref}
                     style={{
-                        color: '#C4C4C4',
+                        resize,
+                        height: 150,
+                        position: 'relative',
                     }}
-                >
+                    onChange={handleTextareaChange}
+                    onFocus={() => {
+                        setFocus(true)
+                    }}
+                    onBlur={() => {
+                        setFocus(false)
+                    }}
+                    {...rest}
+                />
+                <div className={styles.bottomWrap}>
+                    {children}
                     <span
                         style={{
-                            color: value?.length > maxLength ? '#F1343A' : '#C4C4C4',
+                            color: '#C4C4C4',
                         }}
                     >
-                        {value?.length || 0}
+                        <span
+                            style={{
+                                color: value?.length > maxLength ? '#F1343A' : '#C4C4C4',
+                            }}
+                        >
+                            {value?.length || 0}
+                        </span>
+                        /{maxLength}
                     </span>
-                    /{maxLength}
-                </span>
+                </div>
             </div>
-        </div>
+        </CommonTheme>
     )
 })
 
