@@ -1,0 +1,30 @@
+.aiTextArea {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    &:hover {
+        border-color: #699dff;
+    }
+    &.focus:not(.isError) {
+        border-color: #699dff;
+        box-shadow: 0 0 0 2px rgba(64, 126, 255, 0.2);
+    }
+    &.isError {
+        box-shadow: '0 0 0 2px rgba(255, 77, 79, 0.2)';
+        border-color: #ff7875;
+    }
+    .bottomWrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+        height: 25px;
+    }
+    textarea {
+        border: none !important;
+        box-shadow: none !important;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
     "name": "xiangxin-ui",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "type": "module",
     "types": "./lib/types/index.d.ts",
     "files": [
@@ -23,7 +23,8 @@
         "storybook": "storybook dev -p 9999",
         "build-storybook": "storybook build",
         "prettier": "prettier --write .",
-        "prepare": "husky"
+        "prepare": "husky",
+        "chromatic": "npx chromatic --project-token=chpt_057d263533b8fa0"
     },
     "lint-staged": {
         "src/**/*.{ts,tsx,json}": [
@@ -59,6 +60,7 @@
         "@typescript-eslint/eslint-plugin": "^7.2.0",
         "@typescript-eslint/parser": "^7.2.0",
         "@vitejs/plugin-react": "^4.2.1",
+        "chromatic": "^11.4.1",
         "eslint": "^8.57.0",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.6",
