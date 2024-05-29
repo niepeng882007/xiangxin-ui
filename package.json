@@ -1,6 +1,6 @@
 {
     "name": "xiangxin-ui",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "type": "module",
     "types": "./lib/types/index.d.ts",
     "files": [
