@@ -1,6 +1,6 @@
 {
     "name": "xiangxin-ui",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "type": "module",
     "types": "./lib/types/index.d.ts",
     "files": [
@@ -24,8 +24,7 @@
         "build-storybook": "storybook build",
         "prettier": "prettier --write .",
         "prepare": "husky",
-        "chromatic": "npx chromatic --project-token=chpt_057d263533b8fa0",
-        "publish": "npm run build && npm publish"
+        "chromatic": "npx chromatic --project-token=chpt_057d263533b8fa0"
     },
     "lint-staged": {
         "src/**/*.{ts,tsx,json}": [
