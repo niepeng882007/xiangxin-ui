@@ -1,47 +1,40 @@
 import { ConfigProvider } from 'antd'
 
 export interface ICommonTheme {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 export const GlobalTheme = {
-    fontSize: 14,
-    controlHeight: 40,
-    controlHeightSM: 32,
-    controlHeightLG: 48,
+  controlHeight: 40,
+  controlHeightSM: 32,
+  controlHeightLG: 48,
+  borderRadius: 8,
+  borderRadisuSM: 6,
+  borderRadiusLG: 8,
+  fontSize: 14,
+  colorPrimary: '#00b96b', // test
 }
 
 export const InputTheme = {
-    ...GlobalTheme,
-    paddingInlineSM: 12,
-    paddingInline: 16,
-    paddingInlineLG: 16,
-    algorithm: true,
-}
-
-export const ButtonTheme = {
-    ...GlobalTheme,
-}
-
-export const SeekToken = {
-    borderRadius: 8,
-    colorPrimary: '#00b96b', // test
+  paddingInlineSM: 12,
+  paddingInline: 16,
+  paddingInlineLG: 16,
+  algorithm: true,
 }
 
 const CommonTheme: React.FC<ICommonTheme> = ({ children }) => {
-    return (
-        <ConfigProvider
-            theme={{
-                token: SeekToken,
-                components: {
-                    Input: InputTheme,
-                    Button: ButtonTheme,
-                },
-            }}
-        >
-            {children}
-        </ConfigProvider>
-    )
+  return (
+    <ConfigProvider
+      theme={{
+        token: GlobalTheme,
+        components: {
+          Input: InputTheme,
+        },
+      }}
+    >
+      {children}
+    </ConfigProvider>
+  )
 }
 
 export default CommonTheme

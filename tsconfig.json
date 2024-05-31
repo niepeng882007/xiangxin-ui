@@ -1,38 +1,38 @@
 {
-    "compilerOptions": {
-        "target": "ES2020",
-        "useDefineForClassFields": true,
-        "lib": ["ES2020", "DOM", "DOM.Iterable"],
-        "module": "ESNext",
-        "skipLibCheck": true,
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
 
-        /* Bundler mode */
-        "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "react-jsx",
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
 
-        /* Linting */
-        /* Strict Type-Checking Options */
-        "strict": true /* Enable all strict type-checking options. */,
-        "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
-        // "strictNullChecks": true,                    /* Enable strict null checks. */
-        // "strictFunctionTypes": true,                 /* Enable strict checking of function types. */
-        // "strictBindCallApply": true,                 /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
-        // "strictPropertyInitialization": true,        /* Enable strict checking of property initialization in classes. */
-        // "noImplicitThis": true,                      /* Raise error on 'this' expressions with an implied 'any' type. */
-        // "alwaysStrict": true,                        /* Parse in strict mode and emit "use strict" for each source file. */
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
+    /* Linting */
+    /* Strict Type-Checking Options */
+    "strict": true /* Enable all strict type-checking options. */,
+    "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
+    // "strictNullChecks": true,                    /* Enable strict null checks. */
+    // "strictFunctionTypes": true,                 /* Enable strict checking of function types. */
+    // "strictBindCallApply": true,                 /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    // "strictPropertyInitialization": true,        /* Enable strict checking of property initialization in classes. */
+    // "noImplicitThis": true,                      /* Raise error on 'this' expressions with an implied 'any' type. */
+    // "alwaysStrict": true,                        /* Parse in strict mode and emit "use strict" for each source file. */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
 
-        "declaration": true,
-        "declarationDir": "./lib/types",
-        "emitDeclarationOnly": true,
-        "outDir": "./lib"
-    },
-    "include": ["src/**/*.tsx", "src/**/*.ts"],
-    "exclude": ["node_modules", "lib"],
-    "references": [{ "path": "./tsconfig.node.json" }]
+    "declaration": true,
+    "declarationDir": "./lib/types",
+    "emitDeclarationOnly": true,
+    "outDir": "./lib"
+  },
+  "include": ["src/**/*.tsx", "src/**/*.ts"],
+  "exclude": ["node_modules", "lib"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
