@@ -1,3 +1,8 @@
+/**
+ * 主题配置
+ * 推荐在引用方包裹根组件
+ * 也可以包裹单独组件做样式调试
+ */
 import { ConfigProvider } from 'antd'
 
 export interface ICommonTheme {
